@@ -1,3 +1,71 @@
-<h1>
-    hello
-</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5">Boston House Price Prediction</h1>
+        <form action="{{ url_for('predict') }}" method="POST">
+            <div class="form-group">
+                <label for="CRIM">CRIM:</label>
+                <input type="text" class="form-control" id="CRIM" name="CRIM" required>
+            </div>
+            <div class="form-group">
+                <label for="ZN">ZN:</label>
+                <input type="text" class="form-control" id="ZN" name="ZN" required>
+            </div>
+            <div class="form-group">
+                <label for="INDUS">INDUS:</label>
+                <input type="text" class="form-control" id="INDUS" name="INDUS" required>
+            </div>
+            <div class="form-group">
+                <label for="CHAS">CHAS:</label>
+                <input type="text" class="form-control" id="CHAS" name="CHAS" required>
+            </div>
+            <div class="form-group">
+                <label for="NOX">NOX:</label>
+                <input type="text" class="form-control" id="NOX" name="NOX" required>
+            </div>
+            <div class="form-group">
+                <label for="RM">RM:</label>
+                <input type="text" class="form-control" id="RM" name="RM" required>
+            </div>
+            <div class="form-group">
+                <label for="AGE">AGE:</label>
+                <input type="text" class="form-control" id="AGE" name="AGE" required>
+            </div>
+            <div class="form-group">
+                <label for="DIS">DIS:</label>
+                <input type="text" class="form-control" id="DIS" name="DIS" required>
+            </div>
+            <div class="form-group">
+                <label for="RAD">RAD:</label>
+                <input type="text" class="form-control" id="RAD" name="RAD" required>
+            </div>
+            <div class="form-group">
+                <label for="TAX">TAX:</label>
+                <input type="text" class="form-control" id="TAX" name="TAX" required>
+            </div>
+            <div class="form-group">
+                <label for="PTRATIO">PTRATIO:</label>
+                <input type="text" class="form-control" id="PTRATIO" name="PTRATIO" required>
+            </div>
+            <div class="form-group">
+                <label for="B">B:</label>
+                <input type="text" class="form-control" id="B" name="B" required>
+            </div>
+            <div class="form-group">
+                <label for="LSTAT">LSTAT:</label>
+                <input type="text" class="form-control" id="LSTAT" name="LSTAT" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+        {% if prediction_text %}
+        <h2 class="mt-5">{{ prediction_text }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
